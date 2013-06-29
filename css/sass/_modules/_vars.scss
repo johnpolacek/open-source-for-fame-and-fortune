@@ -1,0 +1,28 @@
+// _vars.scss
+
+// Set breakpoints
+$s_breakpoint: 0;
+$m_breakpoint: 45em; // 45 * 16 = 720px
+$l_breakpoint: 70em; // 70 * 16 = 1120px
+
+// Build media queries
+$S: 'min-width:'+ $s_breakpoint;
+$M: 'min-width:'+ $m_breakpoint;
+$L: 'min-width:'+ $l_breakpoint;
+
+
+// Colors
+$bg_dark:  #555;
+$bg_light: #DDD;
+$bg_page:  #F7F7F7;
+
+$text_dark:  rgba(0,0,0,1);
+$text_light: rgba(255,255,255,1);
+
+$link_dark: rgba(0,0,0,.8);
+$link_dark_hover: #000;
+
+
+// Sizes
+$font_size_base: 20px;
+$spacing: 20px;

@@ -1,0 +1,82 @@
+/**
+ * typography.scss
+ */
+/* line 18, ../sass/01._typography.scss */
+body {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+/* line 23, ../sass/01._typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0 0 20px;
+  font-weight: normal;
+  font-family: "Patua One", cursive;
+  line-height: 1;
+}
+
+/* line 31, ../sass/01._typography.scss */
+h1 {
+  font-size: 90px;
+}
+
+/* line 32, ../sass/01._typography.scss */
+h2 {
+  font-size: 80px;
+}
+
+/* line 33, ../sass/01._typography.scss */
+h3 {
+  font-size: 60px;
+}
+
+/* line 34, ../sass/01._typography.scss */
+h4 {
+  font-size: 40px;
+}
+
+/* line 35, ../sass/01._typography.scss */
+h5 {
+  font-size: 32px;
+}
+
+/* line 36, ../sass/01._typography.scss */
+h6 {
+  font-size: 24px;
+}
+
+/* line 38, ../sass/01._typography.scss */
+p, ul, ol, dl {
+  margin: 0;
+  padding: 0 0 20px;
+  font-size: 24px;
+}
+
+/* line 44, ../sass/01._typography.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 45, ../sass/01._typography.scss */
+p a {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 46, ../sass/01._typography.scss */
+pre {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* line 48, ../sass/01._typography.scss */
+.small {
+  font-size: 66%;
+  line-height: .7;
+}
+
+/* line 52, ../sass/01._typography.scss */
+.large {
+  font-size: 150%;
+}

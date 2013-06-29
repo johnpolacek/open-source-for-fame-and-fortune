@@ -1,0 +1,246 @@
+/**
+ * page.scss
+ */
+@import '_modules/vars';
+@import '_modules/mixins';
+
+
+.no-js {
+	.slide { 
+		position:relative;
+		min-height: 100%;
+		display: block;
+	}
+	#slide-why,#slide-famous {
+		height: auto;
+	}
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.slide { 
+	display: none;
+	position:absolute;
+	top:0;left:0;
+	height:100%;
+	width: 100%; 
+	text-align: center;
+	small {
+		position: relative;
+		top: -.166em;
+	}
+	.step {
+		position: relative;
+	}
+}
+.content-group {
+	padding-bottom: $spacing*2;
+	overflow: hidden;
+}
+
+/* vertical centering - http://css-tricks.com/centering-in-the-unknown/ */
+.container-center {
+	height: 100%;
+}
+.container-center:before {
+  content: '';
+  @include inline_block();
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+.content-center {
+	@include inline_block();
+	vertical-align: middle;
+	width: 94%;
+	.step {
+		width: 100%;
+	}
+}
+.content-center-img-fill {
+	@extend .content-center;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#octocat {
+	position: absolute;
+	left: 0;
+	top: 100px;
+}
+
+#slide-why .content-group {
+	text-align: left;
+	width: 90%;
+	margin: 0 auto;
+	.step-a {
+		margin-top: 90px;
+		position: relative;
+	}
+}
+
+#slide-demo {
+	padding: $spacing*2 0;
+	height: auto;
+}
+#slide-epic {
+	padding-top: 80px;
+}
+.terminal {
+	background: #fff;
+	width: 960px;
+	margin: 0 auto $spacing*2;
+	border-radius: 4px;
+	border: solid 2px #999;
+	text-align: left;
+	padding: $spacing;
+	color: #000;
+}
+.terminal-log {
+	color: #999;
+}
+
+.js {
+	#slide-title h1 { 
+		color: rgba(0,0,0,.75); 
+	}
+	#slide-github,#slide-famous,#slide-learning,#slide-me { 
+		color: $text_light; 
+	}
+	#slide-learning h3 { color: $text_dark; }
+	#slide-learning {
+		.step1 {
+			margin-top: 180px;
+			letter-spacing: 1px;
+		}
+		.step2, .step3, .step4 {
+			position: absolute;
+			top: 320px;
+			width: 100%;
+			letter-spacing: 1px;
+		}	
+	}
+	#slide-me {
+		.title {
+			margin-top: 60px;
+			letter-spacing: 1px;
+		}
+		.step {
+			position: absolute;
+			top: 270px;
+			width: 100%;
+			padding: 0 5%;
+		}	
+	}
+	#slide-success {
+		h2 { 
+			line-height: .8; 
+			color: $text_light; 
+			.small {
+				color: $text_dark;
+				a {
+					color: $text_dark;
+				}
+			}
+			a {
+				color: $text_light; 
+				opacity: .8;
+				&:hover { 
+					opacity: 1;
+				}
+			}
+		}
+		.step {
+			position: absolute;
+			top: 240px;
+			width: 100%;
+			padding: 0 5%;
+		}
+	}
+	#slide-hotsnot {
+		.step {
+			position: absolute;
+			width: 100%;
+			top:240px;
+		}
+		.step1a, .step1b { 
+			color: $text_light; 
+		}
+		.step1a,.step1b,.step2a,.step2b {
+			position: relative;
+		}
+		.step3 {
+			top: 270px;
+		}
+		.step4 {
+			top: 120px;
+		}
+	}
+	#slide-secrets {
+		h2, h3 {
+			color: $text_light;
+		}
+	}
+	#slide-how {
+		.title {
+			position: absolute;
+			top: 120px;
+			width: 100%;
+		}
+		.step {
+			position: absolute;
+			width: 100%;
+			top: 240px;
+			left: 0;
+			padding: 0 5%;
+		}
+	}
+	#slide-demo {
+		.step {
+			position: absolute;
+			width: 100%;
+			top: 120px;
+			left: 0;
+			padding: 0 5%;
+		}
+		.step-1 {
+			top:30px;
+		}
+	}
+	#slide-tips {
+		padding-top: 60px;
+		h2,h3 { color: $text_light; }
+		.step {
+			position: absolute;
+			width: 100%;
+			top: 180px;
+			left: 0;
+			padding: 0 5%;
+		}
+	}
+	#slide-timid {
+		h2 { color: $text_light; }
+		.step {
+			position: absolute;
+			width: 100%;
+			top: 180px;
+			left: 0;
+			padding: 0 5%;
+		}
+	}
+	#slide-action {
+		h5 { color: $text_light; }
+		.step {
+			position: relative;
+		}
+	}
+	#slide-end,#slide-appendix {
+		color: $text_light;
+	}
+}

@@ -1,0 +1,97 @@
+// _mixins.scss
+
+// inline_block()
+//   IE supported display:inline-block;
+//   EXAMPLE:
+//     @include inline_block();
+// TODO: check if this is in Compass
+@mixin inline_block() {
+  display: inline-block;
+  *display:block;*zoom:1; // IE support
+}
+
+
+// mq()
+//   Media Queries
+//   EXAMPLE: use the large breakpoint media query
+//     @include mq($L) {}
+@mixin mq($media_query) {
+  @media ($media_query) { @content; }
+}
+
+
+// fixed_ratio()
+//   Calculate fixed ratio based on two dimensions (width/height)
+//     http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios
+//   EXAMPLE
+//     @include fixed_ratio(800px 450px); // width height
+@mixin fixed_ratio($size) {
+  $width:  nth($size, 1);
+  $height: nth($size, 2);
+  $slope: $height / $width;
+
+  padding-top: percentage($slope);
+
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+}
+
+
+// fluid_ratio()
+//   Calculate fluid ratio based on two dimensions (width/height)
+//     http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios
+//   EXAMPLE
+//     @include fluid_ratio(800px 200px, 300px 150px); // width height, width height
+@mixin fluid_ratio($large-size, $small-size) {
+  $width-large: nth($large-size, 1);
+  $width-small: nth($small-size, 1);
+  $height-large: nth($large-size, 2);
+  $height-small: nth($small-size, 2);
+  $slope: ($height-large - $height-small) / ($width-large - $width-small);
+  $height: $height-small - $width-small * $slope;
+
+  padding-top: percentage($slope);
+  height: $height;
+
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+}
+
+
+// link_each_pseudo_element()
+//   Link Each Psuedo Element
+//   NOTE: remember LVHA (link, visited, hover, active)
+//   EXAMPLE
+//     @include link_each_pseudo_element($link_dark, $link_dark, $link_dark_hover, $link_dark_hover);
+@mixin link_each_pseudo_element($link, $visited, $hover, $active) {
+  &:link    { color: $link; }
+  &:visited { color: $visited; }
+  &:hover   { color: $hover; }
+  &:active  { color: $active; }
+}
+
+
+// link_all_pseudo_elements()
+//   Link All Psuedo Elements
+//   EXAMPLE
+//     @include link_all_pseudo_elements($link_dark);
+@mixin link_all_pseudo_elements($color) {
+  &:link    { color: $color; }
+  &:visited { color: $color; }
+  &:hover   { color: darken($color, 10%); }
+  &:active  { color: darken($color, 20%); }
+}
+
+
+// image_replacement()
+//   Add image replacement technique
+//     http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ */
+//   EXAMPLE
+//     @include image_replacement();
+@mixin image_replacement() {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}

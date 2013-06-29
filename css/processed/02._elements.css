@@ -1,0 +1,183 @@
+/**
+ * element.scss
+ */
+/* line 7, ../sass/02._elements.scss */
+.container {
+  overflow: hidden;
+}
+
+/* line 11, ../sass/02._elements.scss */
+.instructions {
+  margin-top: 40px;
+}
+/* line 13, ../sass/02._elements.scss */
+.instructions p {
+  font-size: 18px;
+}
+/* line 16, ../sass/02._elements.scss */
+.instructions .instructions-scroll {
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+/* line 20, ../sass/02._elements.scss */
+.instructions .icon-scroll {
+  display: block;
+  font-size: 120px;
+  line-height: .5;
+  opacity: .25;
+}
+
+/* line 27, ../sass/02._elements.scss */
+.touch .instructions {
+  display: none;
+}
+
+/* line 30, ../sass/02._elements.scss */
+.btn {
+  display: inline-block;
+  *display: block;
+  *zoom: 1;
+  color: white;
+  background: #555;
+  margin: 0 0.1em;
+  padding: 0.2em 0.5em;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+}
+/* line 69, ../sass/_modules/_mixins.scss */
+.btn:link {
+  color: white;
+}
+/* line 70, ../sass/_modules/_mixins.scss */
+.btn:visited {
+  color: white;
+}
+/* line 71, ../sass/_modules/_mixins.scss */
+.btn:hover {
+  color: white;
+}
+/* line 72, ../sass/_modules/_mixins.scss */
+.btn:active {
+  color: white;
+}
+/* line 41, ../sass/02._elements.scss */
+.btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* line 44, ../sass/02._elements.scss */
+.btn-key {
+  opacity: .75;
+  border: solid 3px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  color: #000;
+}
+/* line 49, ../sass/02._elements.scss */
+.btn-key:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* line 52, ../sass/02._elements.scss */
+.img-fill {
+  width: 100%;
+}
+
+/* line 53, ../sass/02._elements.scss */
+.img-left {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 54, ../sass/02._elements.scss */
+.img-rounded {
+  display: inline-block;
+  border: solid 8px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  margin: 4px;
+}
+
+/* line 60, ../sass/02._elements.scss */
+#touch-controls {
+  display: none;
+}
+
+/* line 63, ../sass/02._elements.scss */
+.touch #touch-controls {
+  display: block;
+  position: absolute;
+  opacity: .5;
+  width: 100%;
+  bottom: 0;
+}
+/* line 69, ../sass/02._elements.scss */
+.touch #touch-controls #btn-prev {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+/* line 74, ../sass/02._elements.scss */
+.touch #touch-controls #btn-next {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* line 80, ../sass/02._elements.scss */
+.bouncer {
+  position: relative;
+  -moz-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -moz-animation-name: bounce;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-moz-keyframes bounce {
+  /* line 96, ../sass/02._elements.scss */
+  from {
+    top: 10px;
+    opacity: .3;
+  }
+
+  /* line 97, ../sass/02._elements.scss */
+  to {
+    top: -10px;
+    opacity: .1;
+  }
+}
+
+@-webkit-keyframes bounce {
+  /* line 100, ../sass/02._elements.scss */
+  from {
+    top: 10px;
+    opacity: .3;
+  }
+
+  /* line 101, ../sass/02._elements.scss */
+  to {
+    top: -10px;
+    opacity: .1;
+  }
+}
+
+@keyframes bounce {
+  /* line 104, ../sass/02._elements.scss */
+  from {
+    top: 10px;
+    opacity: .3;
+  }
+
+  /* line 105, ../sass/02._elements.scss */
+  to {
+    top: -10px;
+    opacity: .1;
+  }
+}

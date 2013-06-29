@@ -1,0 +1,48 @@
+/**
+ * global.scss
+ */
+@import '_modules/vars';
+@import '_modules/mixins';
+@import '_vendor/grid.generator';
+
+
+// generate the grid
+@include gridGenerator(
+  ($s_breakpoint, $m_breakpoint, $l_breakpoint), // breakpoints
+  'em',         // breakpoint type 'px' or 'em'
+  12,           // number of grid columns
+  $spacing,     // outer padding
+  ($spacing /2) // inner padding
+  // use default prefixes
+);
+
+
+/********************************************************** Box Sizing *
+  Box Sizing
+  Apply a natural box layout model to all elements - http://paulirish.com/2012/box-sizing-border-box-ftw/
+  border-box polyfill for IE 6/7: https://github.com/Schepp/box-sizing-polyfill#readme
+*/
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;  *behavior: url(boxsizing.htc); }
+
+::-moz-selection { background: $bg_dark; color: $text_light; }
+::selection { background: $bg_dark; color: $text_light; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.no-js {
+  html, body { overflow: scroll; }
+}
+
+a {
+  color: $link_dark;
+  @include link_each_pseudo_element($link_dark, $link_dark, $link_dark_hover, $link_dark_hover);
+
+  /* &:focus { outline: thin dotted; } */
+  &:focus { outline: none; }
+  &:hover, &:active { outline: 0; }
+}

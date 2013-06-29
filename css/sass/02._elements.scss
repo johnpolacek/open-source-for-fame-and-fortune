@@ -1,0 +1,106 @@
+/**
+ * element.scss
+ */
+@import '_modules/vars';
+@import '_modules/mixins';
+
+.container {
+  overflow: hidden;
+}
+
+.instructions {
+  margin-top: $spacing*2;
+  p {
+    font-size: 18px;
+  }
+  .instructions-scroll {
+    border: solid 2px rgba(0,0,0,.2);
+    border-radius: 50%;
+  }
+  .icon-scroll {
+    display: block;
+    font-size: 120px;
+    line-height: .5;
+    opacity: .25;
+  }
+}
+.touch .instructions {
+  display: none;
+}
+.btn {
+  @include inline_block();
+  color: $text_light;
+  background: #555;
+  margin: 0 .1em;
+  padding: .2em .5em;
+
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+
+  @include link_each_pseudo_element($text_light, $text_light, $text_light, $text_light);
+  &:hover { background: $link_dark; }
+}
+
+.btn-key {
+  opacity: .75;  
+  border: solid 3px rgba(0,0,0,.5);
+  background: #fff;
+  color: #000;
+  &:hover { background: #fff; color:#000; }
+}
+
+.img-fill { width: 100%; }
+.img-left { float: left; margin-right: $spacing; }
+.img-rounded {
+  display: inline-block;
+  border: solid 8px rgba(0,0,0,.15);
+  border-radius: 20px;
+  margin: 4px
+}
+#touch-controls {
+  display: none;
+}
+.touch #touch-controls { 
+  display: block;
+  position: absolute;
+  opacity: .5;
+  width: 100%;
+  bottom: 0;
+  #btn-prev {
+    position: absolute;
+    bottom: $spacing;
+    left: $spacing;
+  }
+  #btn-next {
+    position: absolute;
+    bottom: $spacing;
+    right: $spacing;
+  }
+}
+.bouncer {
+  position: relative;
+  -moz-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -moz-animation-name: bounce;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+@-moz-keyframes bounce {
+  from { top: 10px; opacity: .3; }
+  to { top: -10px; opacity: .1; }
+}
+@-webkit-keyframes bounce {
+  from { top: 10px; opacity: .3; }
+  to { top: -10px; opacity: .1; }
+}
+@keyframes bounce {
+  from { top: 10px; opacity: .3; }
+  to { top: -10px; opacity: .1; }
+}

@@ -1,0 +1,54 @@
+/**
+ * typography.scss
+ */
+@import '_modules/vars';
+@import '_modules/mixins';
+@import 'compass/css3/font-face';
+
+// Put your font-face declarations here, like this:
+// @include font-face('Raleway',
+//   font-files(
+//     '../../fonts/raleway/webfonts/raleway_thin-webfont.woff',
+//     '../../fonts/raleway/webfonts/raleway_thin-webfont.ttf',
+//     '../../fonts/raleway/webfonts/raleway_thin-webfont.svg'), // closing is intentional, see http://compass-style.org/reference/compass/css3/font_face/
+//     '../../fonts/raleway/webfonts/raleway_thin-webfont.eot'
+//   );
+
+
+body {
+  font-family: 'PT Sans',Helvetica, Arial, sans-serif;
+  color: $text_dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0 0 $spacing;
+  font-weight: normal;
+  font-family: 'Patua One', cursive;
+  line-height: 1;
+}
+
+h1 { font-size: $font_size_base *4.5; }
+h2 { font-size: $font_size_base *4; }
+h3 { font-size: $font_size_base *3; }
+h4 { font-size: $font_size_base *2; }
+h5 { font-size: $font_size_base *1.6; }
+h6 { font-size: $font_size_base *1.2; }
+
+p, ul, ol, dl {
+  margin: 0;
+  padding: 0 0 $spacing;
+  font-size: $font_size_base *1.2;
+}
+
+a { text-decoration: none; }
+p a { font-style: italic; font-weight: bold; }
+pre { margin: 0; font-size: 24px; }
+
+.small {
+  font-size: 66%;
+  line-height: .7;
+}
+.large {
+  font-size: 150%;
+}

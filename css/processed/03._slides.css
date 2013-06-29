@@ -1,0 +1,290 @@
+/**
+ * page.scss
+ */
+/* line 9, ../sass/03._slides.scss */
+.no-js .slide {
+  position: relative;
+  min-height: 100%;
+  display: block;
+}
+/* line 14, ../sass/03._slides.scss */
+.no-js #slide-why, .no-js #slide-famous {
+  height: auto;
+}
+
+/* line 19, ../sass/03._slides.scss */
+.main {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+/* line 25, ../sass/03._slides.scss */
+.slide {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+/* line 32, ../sass/03._slides.scss */
+.slide small {
+  position: relative;
+  top: -.166em;
+}
+/* line 36, ../sass/03._slides.scss */
+.slide .step {
+  position: relative;
+}
+
+/* line 40, ../sass/03._slides.scss */
+.content-group {
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+/* vertical centering - http://css-tricks.com/centering-in-the-unknown/ */
+/* line 46, ../sass/03._slides.scss */
+.container-center {
+  height: 100%;
+}
+
+/* line 49, ../sass/03._slides.scss */
+.container-center:before {
+  content: '';
+  display: inline-block;
+  *display: block;
+  *zoom: 1;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* Adjusts for spacing */
+}
+
+/* line 56, ../sass/03._slides.scss */
+.content-center, .content-center-img-fill {
+  display: inline-block;
+  *display: block;
+  *zoom: 1;
+  vertical-align: middle;
+  width: 94%;
+}
+/* line 60, ../sass/03._slides.scss */
+.content-center .step, .content-center-img-fill .step {
+  width: 100%;
+}
+
+/* line 64, ../sass/03._slides.scss */
+.content-center-img-fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 72, ../sass/03._slides.scss */
+#octocat {
+  position: absolute;
+  left: 0;
+  top: 100px;
+}
+
+/* line 78, ../sass/03._slides.scss */
+#slide-why .content-group {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 82, ../sass/03._slides.scss */
+#slide-why .content-group .step-a {
+  margin-top: 90px;
+  position: relative;
+}
+
+/* line 88, ../sass/03._slides.scss */
+#slide-demo {
+  padding: 40px 0;
+  height: auto;
+}
+
+/* line 92, ../sass/03._slides.scss */
+#slide-epic {
+  padding-top: 80px;
+}
+
+/* line 95, ../sass/03._slides.scss */
+.terminal {
+  background: #fff;
+  width: 960px;
+  margin: 0 auto 40px;
+  border-radius: 4px;
+  border: solid 2px #999999;
+  text-align: left;
+  padding: 20px;
+  color: #000;
+}
+
+/* line 105, ../sass/03._slides.scss */
+.terminal-log {
+  color: #999;
+}
+
+/* line 110, ../sass/03._slides.scss */
+.js #slide-title h1 {
+  color: rgba(0, 0, 0, 0.75);
+}
+/* line 113, ../sass/03._slides.scss */
+.js #slide-github, .js #slide-famous, .js #slide-learning, .js #slide-me {
+  color: white;
+}
+/* line 116, ../sass/03._slides.scss */
+.js #slide-learning h3 {
+  color: black;
+}
+/* line 118, ../sass/03._slides.scss */
+.js #slide-learning .step1 {
+  margin-top: 180px;
+  letter-spacing: 1px;
+}
+/* line 122, ../sass/03._slides.scss */
+.js #slide-learning .step2, .js #slide-learning .step3, .js #slide-learning .step4 {
+  position: absolute;
+  top: 320px;
+  width: 100%;
+  letter-spacing: 1px;
+}
+/* line 130, ../sass/03._slides.scss */
+.js #slide-me .title {
+  margin-top: 60px;
+  letter-spacing: 1px;
+}
+/* line 134, ../sass/03._slides.scss */
+.js #slide-me .step {
+  position: absolute;
+  top: 270px;
+  width: 100%;
+  padding: 0 5%;
+}
+/* line 142, ../sass/03._slides.scss */
+.js #slide-success h2 {
+  line-height: .8;
+  color: white;
+}
+/* line 145, ../sass/03._slides.scss */
+.js #slide-success h2 .small {
+  color: black;
+}
+/* line 147, ../sass/03._slides.scss */
+.js #slide-success h2 .small a {
+  color: black;
+}
+/* line 151, ../sass/03._slides.scss */
+.js #slide-success h2 a {
+  color: white;
+  opacity: .8;
+}
+/* line 154, ../sass/03._slides.scss */
+.js #slide-success h2 a:hover {
+  opacity: 1;
+}
+/* line 159, ../sass/03._slides.scss */
+.js #slide-success .step {
+  position: absolute;
+  top: 240px;
+  width: 100%;
+  padding: 0 5%;
+}
+/* line 167, ../sass/03._slides.scss */
+.js #slide-hotsnot .step {
+  position: absolute;
+  width: 100%;
+  top: 240px;
+}
+/* line 172, ../sass/03._slides.scss */
+.js #slide-hotsnot .step1a, .js #slide-hotsnot .step1b {
+  color: white;
+}
+/* line 175, ../sass/03._slides.scss */
+.js #slide-hotsnot .step1a, .js #slide-hotsnot .step1b, .js #slide-hotsnot .step2a, .js #slide-hotsnot .step2b {
+  position: relative;
+}
+/* line 178, ../sass/03._slides.scss */
+.js #slide-hotsnot .step3 {
+  top: 270px;
+}
+/* line 181, ../sass/03._slides.scss */
+.js #slide-hotsnot .step4 {
+  top: 120px;
+}
+/* line 186, ../sass/03._slides.scss */
+.js #slide-secrets h2, .js #slide-secrets h3 {
+  color: white;
+}
+/* line 191, ../sass/03._slides.scss */
+.js #slide-how .title {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+}
+/* line 196, ../sass/03._slides.scss */
+.js #slide-how .step {
+  position: absolute;
+  width: 100%;
+  top: 240px;
+  left: 0;
+  padding: 0 5%;
+}
+/* line 205, ../sass/03._slides.scss */
+.js #slide-demo .step {
+  position: absolute;
+  width: 100%;
+  top: 120px;
+  left: 0;
+  padding: 0 5%;
+}
+/* line 212, ../sass/03._slides.scss */
+.js #slide-demo .step-1 {
+  top: 30px;
+}
+/* line 216, ../sass/03._slides.scss */
+.js #slide-tips {
+  padding-top: 60px;
+}
+/* line 218, ../sass/03._slides.scss */
+.js #slide-tips h2, .js #slide-tips h3 {
+  color: white;
+}
+/* line 219, ../sass/03._slides.scss */
+.js #slide-tips .step {
+  position: absolute;
+  width: 100%;
+  top: 180px;
+  left: 0;
+  padding: 0 5%;
+}
+/* line 228, ../sass/03._slides.scss */
+.js #slide-timid h2 {
+  color: white;
+}
+/* line 229, ../sass/03._slides.scss */
+.js #slide-timid .step {
+  position: absolute;
+  width: 100%;
+  top: 180px;
+  left: 0;
+  padding: 0 5%;
+}
+/* line 238, ../sass/03._slides.scss */
+.js #slide-action h5 {
+  color: white;
+}
+/* line 239, ../sass/03._slides.scss */
+.js #slide-action .step {
+  position: relative;
+}
+/* line 243, ../sass/03._slides.scss */
+.js #slide-end, .js #slide-appendix {
+  color: white;
+}
