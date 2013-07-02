@@ -109,21 +109,22 @@
   opacity: .5;
   width: 100%;
   bottom: 0;
+  z-index: 999999;
 }
-/* line 69, ../sass/02._elements.scss */
+/* line 70, ../sass/02._elements.scss */
 .touch #touch-controls #btn-prev {
   position: absolute;
   bottom: 20px;
   left: 20px;
 }
-/* line 74, ../sass/02._elements.scss */
+/* line 75, ../sass/02._elements.scss */
 .touch #touch-controls #btn-next {
   position: absolute;
   bottom: 20px;
   right: 20px;
 }
 
-/* line 80, ../sass/02._elements.scss */
+/* line 81, ../sass/02._elements.scss */
 .bouncer {
   position: relative;
   -moz-animation-duration: 1s;
@@ -141,13 +142,13 @@
 }
 
 @-moz-keyframes bounce {
-  /* line 96, ../sass/02._elements.scss */
+  /* line 97, ../sass/02._elements.scss */
   from {
     top: 10px;
     opacity: .3;
   }
 
-  /* line 97, ../sass/02._elements.scss */
+  /* line 98, ../sass/02._elements.scss */
   to {
     top: -10px;
     opacity: .1;
@@ -155,13 +156,13 @@
 }
 
 @-webkit-keyframes bounce {
-  /* line 100, ../sass/02._elements.scss */
+  /* line 101, ../sass/02._elements.scss */
   from {
     top: 10px;
     opacity: .3;
   }
 
-  /* line 101, ../sass/02._elements.scss */
+  /* line 102, ../sass/02._elements.scss */
   to {
     top: -10px;
     opacity: .1;
@@ -169,13 +170,13 @@
 }
 
 @keyframes bounce {
-  /* line 104, ../sass/02._elements.scss */
+  /* line 105, ../sass/02._elements.scss */
   from {
     top: 10px;
     opacity: .3;
   }
 
-  /* line 105, ../sass/02._elements.scss */
+  /* line 106, ../sass/02._elements.scss */
   to {
     top: -10px;
     opacity: .1;

@@ -2563,12 +2563,10 @@ else {
     }
   });
 
-  $('#btn-prev').on('click',function(e) {
-    e.preventDefault();
+  $('#btn-prev').on('click',function() {
     deck.prev();
   });
-  $('#btn-next').on('click',function(e) {
-    e.preventDefault();
+  $('#btn-next').on('click',function() {
     deck.next();
   });
 
