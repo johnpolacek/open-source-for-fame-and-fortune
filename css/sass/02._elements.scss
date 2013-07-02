@@ -66,6 +66,7 @@
   opacity: .5;
   width: 100%;
   bottom: 0;
+  z-index: 999999;
   #btn-prev {
     position: absolute;
     bottom: $spacing;
