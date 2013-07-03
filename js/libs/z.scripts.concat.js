@@ -1964,7 +1964,7 @@ else {
 })(jQuery,'smartresize');
 /*
 	TweenDeck - For making animated presentation decks with Greensock
-	by John Polacek (@johnpolacek)
+	by John Polacek (@johnpolacek) - with some help from @greensock himself
 
 	Powered by the Greensock Tweening Platform
 	http://www.greensock.com
@@ -1978,35 +1978,58 @@ else {
 	$.tweendeck = function(timeline, options) {
 
 		var tweendeck = this;
+		var positions = [];
+		var positionIndex = 1;
+		var timeScale = 0;
 		var defaults = {
-
+			allowSkip:true
 		};
 		tweendeck.settings = $.extend({}, defaults, options);
 
-		function pauseTimeline() { timeline.pause(); }
-
+		// Record the start time of each child tween/timeline
 		$.each(timeline.getChildren(false), function() {
-			this.eventCallback('onComplete', pauseTimeline).eventCallback('onReverseComplete', pauseTimeline);
+			positions.push(this.startTime());
 		});
+
+        timeline.tweenTo(positions[1]); //animate to the first deck
 
 		// Keyboard events
 		$(document).on('keydown', function(e){
 			// down/right arrow, pagedown, space = play forward
-			if (e.keyCode === 34 || e.keyCode === 39 || e.keyCode === 32 || e.keyCode === 40) {
-				timeline.play();
+			if ((e.keyCode === 34 || e.keyCode === 39 || e.keyCode === 32 || e.keyCode === 40) && positionIndex < positions.length) {
+				tweendeck.next();
 			}
 			// up/left arrow, pageup = rewind
-			else if (e.keyCode === 33 || e.keyCode === 37 || e.keyCode === 38) {
-				timeline.reverse();
+			else if ((e.keyCode === 33 || e.keyCode === 37 || e.keyCode === 38) && positionIndex > 1) {
+				tweendeck.prev();
 			}
 		});
 
+		// Move the playhead to the appropriate position (based on the index)
+		function tweenTo(i) {
+			if (tweendeck.settings.allowSkip) {
+				timeScale++; //speed up if the user keeps pushing the button.
+			} else if (timeScale !== 0) {
+				// If the timeScale isn't 0, that means we're mid-tween, and since allowSkip is false, we should ignore the request.
+				return;
+			} else {
+				timeScale = 1;
+			}
+			positionIndex = i;
+			// Tween the "time" (playhead) to the new position using a linear ease. We could have used timeline.tweenTo() if we knew the timeline would always be a TimelineMax, but this code makes it compatible with TimelineLite too.
+			TweenLite.to(timeline, Math.abs(positions[i] - timeline.time()), {time:positions[i], ease:Linear.easeNone, onComplete:function() {
+					// Reset the timeScale when the tween is done
+					timeScale = 0;
+				}
+			}).timeScale(timeScale);
+		}
+
 		// Public Functions
 		tweendeck.next = function() {
-			timeline.play();
+			tweenTo(positionIndex+1);
 		};
 		tweendeck.prev = function() {
-			timeline.reverse();
+			tweenTo(positionIndex-1);
 		};
 
 		return tweendeck;
@@ -2044,7 +2067,8 @@ else {
   $('#slide-title h1 span').css({position:'relative'}).each(function() {
     intro.add(TweenMax.from(this, 2, {css:{top: Math.random()*200+600, left: (Math.random()*1000)-500, rotation:Math.random()*720-360}, ease:Back.easeOut}),1.25);
   });
-  intro.add(TweenMax.from($('#author,.instructions'), 0.5, {opacity:0,delay:0.25}));
+  intro.add(TweenMax.from($('#fork-ribbon'), 0.5, {top:-200,right:-200, ease:Expo.easeOut}));
+  intro.add(TweenMax.from($('#author,.instructions'), 0.5, {opacity:0}));
   tl.add(intro);
 
 
@@ -2058,6 +2082,7 @@ else {
     slideGithub.add(TweenMax.to(this, 1.5, {css:{opacity:0, top: Math.random()*-200-400, left: (Math.random()*1000)-500, rotation:Math.random()*720-360}, ease:Expo.easeIn}),0);
   });
   slideGithub.add(TweenMax.to($('#author,.instructions').css({position:'relative'}), 0.5, {opacity:0}),0);
+  slideGithub.add(TweenMax.to($('#fork-ribbon'), 0.5, {top:-200,right:-200, ease:Expo.easeIn}),0);
   slideGithub.add(TweenMax.to($('#slide-title'),0,{immediateRender:false,css:{display:'none'}}));
 
   // then animate in the new slide content
@@ -2555,11 +2580,16 @@ else {
   var deck = $.tweendeck(tl);
 
   // add scroll event control via jQuery mousewheel - https://github.com/brandonaaron/jquery-mousewheel#readme
+  var mwThrottle = false;
   $('body').mousewheel(function(event, delta, deltaX, deltaY) {
-    if (delta > 0) {
-      deck.prev();
-    } else {
-      deck.next();
+    if (!mwThrottle) {
+      setTimeout(function() { mwThrottle = false; }, 1000);
+      mwThrottle = true;
+      if (delta > 0) {
+        deck.prev();
+      } else {
+        deck.next();
+      }
     }
   });
 

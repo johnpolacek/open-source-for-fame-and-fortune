@@ -28,7 +28,8 @@
   $('#slide-title h1 span').css({position:'relative'}).each(function() {
     intro.add(TweenMax.from(this, 2, {css:{top: Math.random()*200+600, left: (Math.random()*1000)-500, rotation:Math.random()*720-360}, ease:Back.easeOut}),1.25);
   });
-  intro.add(TweenMax.from($('#author,.instructions'), 0.5, {opacity:0,delay:0.25}));
+  intro.add(TweenMax.from($('#fork-ribbon'), 0.5, {top:-200,right:-200, ease:Expo.easeOut}));
+  intro.add(TweenMax.from($('#author,.instructions'), 0.5, {opacity:0}));
   tl.add(intro);
 
 
@@ -42,6 +43,7 @@
     slideGithub.add(TweenMax.to(this, 1.5, {css:{opacity:0, top: Math.random()*-200-400, left: (Math.random()*1000)-500, rotation:Math.random()*720-360}, ease:Expo.easeIn}),0);
   });
   slideGithub.add(TweenMax.to($('#author,.instructions').css({position:'relative'}), 0.5, {opacity:0}),0);
+  slideGithub.add(TweenMax.to($('#fork-ribbon'), 0.5, {top:-200,right:-200, ease:Expo.easeIn}),0);
   slideGithub.add(TweenMax.to($('#slide-title'),0,{immediateRender:false,css:{display:'none'}}));
 
   // then animate in the new slide content
@@ -539,11 +541,16 @@
   var deck = $.tweendeck(tl);
 
   // add scroll event control via jQuery mousewheel - https://github.com/brandonaaron/jquery-mousewheel#readme
+  var mwThrottle = false;
   $('body').mousewheel(function(event, delta, deltaX, deltaY) {
-    if (delta > 0) {
-      deck.prev();
-    } else {
-      deck.next();
+    if (!mwThrottle) {
+      setTimeout(function() { mwThrottle = false; }, 1000);
+      mwThrottle = true;
+      if (delta > 0) {
+        deck.prev();
+      } else {
+        deck.next();
+      }
     }
   });
 
