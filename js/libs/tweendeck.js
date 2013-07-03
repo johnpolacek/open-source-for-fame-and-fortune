@@ -26,6 +26,7 @@
 		$.each(timeline.getChildren(false), function() {
 			positions.push(this.startTime());
 		});
+		positions.push(timeline.duration()); // add end of timeline to the positions
 
         timeline.tweenTo(positions[1]); //animate to the first deck
 
